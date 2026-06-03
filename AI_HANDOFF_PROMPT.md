@@ -45,11 +45,15 @@ Relevant AppID files:
 Local API environment:
 .env.local is intentionally ignored by Git.
 
-For WeChat DevTools simulator, this can be used:
+Current real environment:
+VITE_API_BASE_URL=https://nodedev2.ztdq.com
+VITE_DOCUMENT_BASE_URL=https://nodedev2.ztdq.com
+
+For local Odoo simulator debugging, this can be used:
 VITE_API_BASE_URL=http://127.0.0.1:8069
 VITE_DOCUMENT_BASE_URL=http://127.0.0.1:8069
 
-For real-device LAN debugging on the tested machine, this was used:
+For real-device LAN debugging on the tested machine, this was previously used:
 VITE_API_BASE_URL=http://192.168.2.40:8069
 VITE_DOCUMENT_BASE_URL=http://192.168.2.40:8069
 
@@ -99,7 +103,7 @@ This account must be:
 - bound through WeChat phone binding if using one-click login
 
 If login fails, check in this order:
-1. Confirm .env.local points to the backend reachable by the current test environment.
+1. Confirm .env.local points to the backend reachable by the current test environment. The current real backend is https://nodedev2.ztdq.com.
 2. Rebuild mp-weixin output.
 3. Confirm dist\build\mp-weixin\utils\platform.js contains the expected API base URL.
 4. Check WeChat DevTools local setting:
