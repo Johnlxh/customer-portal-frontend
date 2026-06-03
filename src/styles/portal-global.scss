@@ -1,0 +1,299 @@
+page {
+  background: var(--portal-bg);
+  color: var(--portal-text);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+:root {
+  --portal-primary: #2f6fde;
+  --portal-primary-hover: #255bc0;
+  --portal-primary-soft: #e9f1ff;
+  --portal-primary-tint: #f3f7ff;
+  --portal-success: #1f7a62;
+  --portal-warning: #b7791f;
+  --portal-danger: #c24141;
+  --portal-bg: #eef2f8;
+  --portal-surface: #ffffff;
+  --portal-surface-muted: #f4f7fb;
+  --portal-border: #d3dbe8;
+  --portal-border-strong: #9fb4d8;
+  --portal-panel: #0e1b2e;
+  --portal-panel-soft: #152640;
+  --portal-text: #16253b;
+  --portal-text-muted: #62718a;
+  --portal-text-placeholder: #93a0b5;
+  --portal-bg-mask: rgba(15, 23, 42, 0.4);
+  --portal-radius: 18rpx;
+  --portal-shadow: 0 14rpx 36rpx -24rpx rgba(18, 37, 63, 0.18);
+  --portal-shadow-hover: 0 18rpx 44rpx -26rpx rgba(18, 37, 63, 0.18);
+  --portal-shell-gap: 32px;
+  --portal-content-max: 1360px;
+  --portal-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 32rpx;
+  background: var(--portal-bg);
+}
+
+.page-shell--with-nav {
+  display: flex;
+  height: calc(100vh - var(--window-top) - var(--window-bottom));
+  min-height: calc(100vh - var(--window-top) - var(--window-bottom));
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.page-shell__content {
+  box-sizing: border-box;
+  flex: 1;
+  min-height: 0;
+  padding: 28rpx 24rpx 32rpx;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18rpx;
+  margin-top: 24rpx;
+}
+
+.inline-button {
+  margin: 0;
+  border: none;
+}
+
+.card {
+  background: var(--portal-surface);
+  border-radius: var(--portal-radius);
+  box-sizing: border-box;
+  border: 1px solid var(--portal-border);
+  box-shadow: var(--portal-shadow);
+  transition: var(--portal-transition);
+}
+
+.page-title,
+uni-text.page-title,
+text.page-title {
+  display: block;
+  width: 100%;
+  font-size: 42rpx;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--portal-text);
+  letter-spacing: -0.6px;
+}
+
+.page-subtitle,
+uni-text.page-subtitle,
+text.page-subtitle {
+  display: block;
+  width: 100%;
+  max-width: 1120rpx;
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  line-height: 1.65;
+  color: var(--portal-text-muted);
+}
+
+.page-heading,
+uni-view.page-heading,
+view.page-heading {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12rpx;
+}
+
+.section-title {
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: var(--portal-text);
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88rpx;
+  padding: 0 32rpx;
+  border: none;
+  border-radius: 14rpx;
+  background: var(--portal-primary);
+  color: #ffffff;
+  font-size: 28rpx;
+  font-weight: 700;
+  transition: var(--portal-transition);
+}
+
+.primary-button:active {
+  background: var(--portal-primary-hover);
+  transform: translateY(2rpx);
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88rpx;
+  padding: 0 32rpx;
+  border-radius: 14rpx;
+  border: 1px solid var(--portal-border);
+  background: var(--portal-surface-muted);
+  color: var(--portal-text);
+  font-size: 26rpx;
+  font-weight: 600;
+  transition: var(--portal-transition);
+}
+
+.secondary-button:active {
+  background: var(--portal-primary-tint);
+  transform: translateY(2rpx);
+}
+
+.field-label {
+  font-size: 24rpx;
+  color: var(--portal-text-muted);
+}
+
+.field-value {
+  margin-top: 8rpx;
+  font-size: 30rpx;
+  color: var(--portal-text);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --portal-radius: 14px;
+    --portal-shadow: 0 16px 40px -30px rgba(18, 37, 63, 0.14);
+    --portal-shadow-hover: 0 18px 42px -30px rgba(18, 37, 63, 0.14);
+  }
+
+  .page-shell {
+    padding: 0;
+    background: var(--portal-bg);
+  }
+
+  .page-shell--with-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--portal-bg);
+  }
+
+  .uni-page-head,
+  uni-page-head,
+  .uni-tabbar,
+  uni-tabbar,
+  .uni-tabbar-bottom {
+    display: none !important;
+  }
+
+  .page-shell--with-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 100vh;
+  }
+
+  .page-shell--with-nav .page-shell__content {
+    flex: 1;
+    min-width: 0;
+    margin-left: 248px;
+    padding: 36px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-shell__content > view,
+  .page-shell__content > div {
+    max-width: var(--portal-content-max);
+    width: 100%;
+  }
+
+  .page-title,
+  uni-text.page-title,
+  text.page-title {
+    display: block;
+    font-size: 34px;
+    line-height: 1.15;
+    letter-spacing: -1.1px;
+    text-align: left;
+  }
+
+  .page-subtitle,
+  uni-text.page-subtitle,
+  text.page-subtitle {
+    display: block;
+    max-width: 760px;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .page-heading,
+  uni-view.page-heading,
+  view.page-heading {
+    gap: 10px;
+  }
+
+  .section-title {
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .primary-button:hover {
+    background: var(--portal-primary-hover);
+  }
+
+  .secondary-button:hover {
+    border-color: var(--portal-border-strong);
+    background: var(--portal-primary-tint);
+  }
+
+  .field-label {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .field-value {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  .detail-grid {
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .card {
+    border-radius: var(--portal-radius);
+  }
+
+  .uni-app--showtabbar uni-page-wrapper {
+    padding-bottom: 0 !important;
+  }
+
+  .uni-app--showtabbar uni-page-head {
+    display: none !important;
+  }
+}

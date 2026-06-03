@@ -1,0 +1,231 @@
+$uni-color-primary: #1f6fb2;
+$uni-color-success: #1a8f5a;
+$uni-color-warning: #c47f00;
+$uni-color-error: #be3b34;
+
+$uni-text-color: #19212e;
+$uni-text-color-inverse: #ffffff;
+$uni-text-color-grey: #667085;
+$uni-text-color-placeholder: #98a2b3;
+$uni-text-color-disable: #b7c0cc;
+
+$uni-bg-color: #ffffff;
+$uni-bg-color-grey: #f6f7fb;
+$uni-bg-color-hover: #eef2f7;
+$uni-bg-color-mask: rgba(10, 13, 18, 0.4);
+
+$uni-border-color: #dde3ec;
+
+$uni-font-size-sm: 12px;
+$uni-font-size-base: 14px;
+$uni-font-size-lg: 16px;
+
+$uni-img-size-sm: 20px;
+$uni-img-size-base: 24px;
+$uni-img-size-lg: 40px;
+
+$uni-border-radius-sm: 6px;
+$uni-border-radius-base: 12px;
+$uni-border-radius-lg: 20px;
+$uni-border-radius-circle: 50%;
+
+$uni-spacing-row-sm: 8px;
+$uni-spacing-row-base: 12px;
+$uni-spacing-row-lg: 20px;
+
+$uni-spacing-col-sm: 8px;
+$uni-spacing-col-base: 12px;
+$uni-spacing-col-lg: 20px;
+
+$uni-opacity-disabled: 0.35;
+
+:root {
+  --portal-primary: #1f6fb2;
+  --portal-primary-soft: #e9f2fb;
+  --portal-success: #1a8f5a;
+  --portal-warning: #c47f00;
+  --portal-danger: #be3b34;
+  --portal-bg: #f6f7fb;
+  --portal-surface: #ffffff;
+  --portal-surface-muted: #eef2f7;
+  --portal-border: #dde3ec;
+  --portal-text: #19212e;
+  --portal-text-muted: #667085;
+  --portal-radius: 18rpx;
+  --portal-shadow: 0 10rpx 36rpx rgba(31, 46, 74, 0.08);
+  --portal-shell-gap: 24px;
+  --portal-content-max: 1360px;
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 28rpx;
+  background: var(--portal-bg);
+}
+
+.page-shell--with-nav {
+  display: flex;
+  height: calc(100vh - var(--window-top) - var(--window-bottom));
+  min-height: calc(100vh - var(--window-top) - var(--window-bottom));
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.page-shell__content {
+  box-sizing: border-box;
+  flex: 1;
+  min-height: 0;
+  padding: 28rpx;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18rpx;
+  margin-top: 24rpx;
+}
+
+.inline-button {
+  margin: 0;
+  border: none;
+}
+
+.card {
+  background: var(--portal-surface);
+  border-radius: var(--portal-radius);
+  box-shadow: var(--portal-shadow);
+}
+
+.page-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: var(--portal-text);
+}
+
+.page-subtitle {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  line-height: 1.5;
+  color: var(--portal-text-muted);
+}
+
+.section-title {
+  margin-bottom: 18rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: var(--portal-text);
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88rpx;
+  padding: 0 28rpx;
+  border-radius: 999rpx;
+  background: var(--portal-primary);
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88rpx;
+  padding: 0 28rpx;
+  border-radius: 999rpx;
+  border: 1px solid var(--portal-border);
+  background: #ffffff;
+  color: var(--portal-text);
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.field-label {
+  font-size: 24rpx;
+  color: var(--portal-text-muted);
+}
+
+.field-value {
+  margin-top: 8rpx;
+  font-size: 30rpx;
+  color: var(--portal-text);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --portal-radius: 18px;
+    --portal-shadow: 0 18px 48px rgba(25, 33, 46, 0.08);
+  }
+
+  .page-shell {
+    padding: 24px;
+  }
+
+  .page-shell--with-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--portal-shell-gap);
+    height: 100vh;
+    min-height: 100vh;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+
+  .page-shell__content {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .page-shell__content > * {
+    max-width: var(--portal-content-max);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page-title {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .page-subtitle {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  .section-title {
+    margin-bottom: 16px;
+    font-size: 22px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    min-height: 46px;
+    padding: 0 22px;
+    font-size: 15px;
+  }
+
+  .field-label {
+    font-size: 13px;
+  }
+
+  .field-value {
+    margin-top: 6px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .detail-grid {
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .card {
+    border-radius: var(--portal-radius);
+  }
+}
